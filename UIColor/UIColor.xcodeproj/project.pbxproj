@@ -14,6 +14,7 @@
 		8659E6C928A404C800CA6DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8659E6C728A404C800CA6DD6 /* LaunchScreen.storyboard */; };
 		8678901828A40D3F008C0C8F /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678901728A40D3F008C0C8F /* FirstVC.swift */; };
 		8678901A28A40D4F008C0C8F /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678901928A40D4F008C0C8F /* SecondVC.swift */; };
+		868E069728A460A900309CEC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E069628A460A900309CEC /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8659E6CA28A404C800CA6DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8678901728A40D3F008C0C8F /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		8678901928A40D4F008C0C8F /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		868E069628A460A900309CEC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		8659E6BB28A404C700CA6DD6 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
+				868E069528A4608B00309CEC /* Models */,
 				8678901528A4084D008C0C8F /* Controllers */,
 				8678901628A40856008C0C8F /* Views */,
 				8678901428A40848008C0C8F /* Apps */,
@@ -92,6 +95,14 @@
 				8659E6C728A404C800CA6DD6 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		868E069528A4608B00309CEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				868E069628A460A900309CEC /* Color.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				8659E6BD28A404C700CA6DD6 /* AppDelegate.swift in Sources */,
 				8678901828A40D3F008C0C8F /* FirstVC.swift in Sources */,
 				8678901A28A40D4F008C0C8F /* SecondVC.swift in Sources */,
+				868E069728A460A900309CEC /* Color.swift in Sources */,
 				8659E6BF28A404C700CA6DD6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
