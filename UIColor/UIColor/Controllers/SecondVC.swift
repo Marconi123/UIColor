@@ -10,9 +10,8 @@ import UIKit
 // MARK: - Protocols
 
 final class SecondVC: UIViewController {
-    
     // MARK: - Properties
-    
+
     var dalegate: DataUpdateProtocol?
     var setColor: UIColor?
     
@@ -20,45 +19,44 @@ final class SecondVC: UIViewController {
     
     // Sliders
     // Red Slider
-    @IBOutlet private weak var redSliderOutl: UISlider!
+    @IBOutlet private var redSliderOutl: UISlider!
     
     // Green slider
-    @IBOutlet private weak var greenSliderOutl: UISlider!
+    @IBOutlet private var greenSliderOutl: UISlider!
     
     // Blue slider
-    @IBOutlet private weak var bluerSliderOutl: UISlider!
+    @IBOutlet private var bluerSliderOutl: UISlider!
 
     // Opacity slider
-    @IBOutlet private weak var opacitySliderOutl: UISlider!
+    @IBOutlet private var opacitySliderOutl: UISlider!
     
     // Text Field
     // Red slider text field
-    @IBOutlet private weak var redSliderTF: UITextField!
+    @IBOutlet private var redSliderTF: UITextField!
     
     // Green slider text field
-    @IBOutlet private weak var greenSliderTF: UITextField!
+    @IBOutlet private var greenSliderTF: UITextField!
     
     // Blue slider text field
-    @IBOutlet private weak var blueSliderTF: UITextField!
+    @IBOutlet private var blueSliderTF: UITextField!
     
     // Hex Color Text Field
-    @IBOutlet private weak var hexColorSliderTF: UITextField!
+    @IBOutlet private var hexColorSliderTF: UITextField!
     
     // Opacity Text Field
-    @IBOutlet private weak var opacitySliderTF: UITextField!
+    @IBOutlet private var opacitySliderTF: UITextField!
     
     // View
-    @IBOutlet private weak var viewColor: UIView!
+    @IBOutlet private var viewColor: UIView!
     
     // Done button
-    @IBOutlet private weak var doneBtn: UIButton!
+    @IBOutlet private var doneBtn: UIButton!
     
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
     }
     
     // MARK: - Actions
@@ -67,25 +65,25 @@ final class SecondVC: UIViewController {
     // Red Slider
     @IBAction func redSlider(_ sender: UISlider) {
         let value = Int(redSliderOutl.value)
-        redSliderTF.text = ("\(value)")
+        redSliderTF.text = "\(value)"
     }
     
     // Green Slider
     @IBAction func greenSlider(_ sender: UISlider) {
         let value = Int(greenSliderOutl.value)
-        greenSliderTF.text = ("\(value)")
+        greenSliderTF.text = "\(value)"
     }
     
     // Blue Slider
     @IBAction func blueSlider(_ sender: UISlider) {
         let value = Int(bluerSliderOutl.value)
-        blueSliderTF.text = ("\(value)")
+        blueSliderTF.text = "\(value)"
     }
     
     // Opacity Slider
     @IBAction func opacitySlider(_ sender: UISlider) {
         let value = Int(opacitySliderOutl.value)
-        opacitySliderTF.text = ("\(value)")
+        opacitySliderTF.text = "\(value)"
     }
     
     // Text Fields
@@ -108,8 +106,7 @@ final class SecondVC: UIViewController {
     }
     
     // Hex Color Text Field
-    @IBAction func hexColorTFAction(_ sender: UITextField) {
-    }
+    @IBAction func hexColorTFAction(_ sender: UITextField) {}
 
     // Opacity text field
     @IBAction func opacityTFAction(_ sender: UITextField) {
@@ -119,19 +116,25 @@ final class SecondVC: UIViewController {
     
     // Done button action
     @IBAction func doneBtnAction(_ sender: UIButton) {
-        setColor = .red
+        let red = CGFloat(redSliderOutl.value)
+        let green = CGFloat(greenSliderOutl.value)
+        let blue = CGFloat(bluerSliderOutl.value)
+        let alpha = CGFloat(opacitySliderOutl.value)
+        let newColor = UIColor(red: red/250, green: green/250, blue: blue/250, alpha: alpha/250)
+        setColor = newColor
         dalegate?.onDataUpdate(data: setColor!)
         navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Functions
 
-    
     func setupUI() {
         redSliderOutl.maximumValue = 250
         greenSliderOutl.maximumValue = 250
         bluerSliderOutl.maximumValue = 250
         opacitySliderOutl.maximumValue = 250
+        self.viewColor.backgroundColor = setColor
     }
+
     // MARK: - Navigation
 }
